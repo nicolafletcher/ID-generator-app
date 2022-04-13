@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Test ID Generator</title>
+
+    <!-- bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Test ID Generator</h1>
+      <div class="jumbotron" style="width: 900px">
+        <form id="testInputForm">
+          <!-- automated/manual selection boxes -->
+          <div class="form-group">
+            <label for="testDescInput">Test Type</label><br />
+            <input type="radio" id="automated" name="testType" value="A" checked/>
+            <label for="automated">Automated</label><br />
+            <input type="radio" id="manual" name="testType" value="M"/>
+            <label for="manual">Manual</label>
+          </div>
+          <!-- prefix selection -->
+          <div class="form-group" style="width: 105px">
+            <label for="testDescInput">Select a prefix</label>
+            <select class="form-control" id="testPrefixInput" required>
+              <option value="">None</option>              
+              <option value="LEAD">LEAD</option>
+              <option value="DD">DD</option>
+              <option value="PART">PART</option>
+              <option value="ADA">ADA</option>
+              <option value="SEC">SEC</option>
+              <option value="REP">REP</option>
+              <option value="INT">INT</option>
+            </select>
+          </div>
+          <!-- Functionality input -->
+          <div class="form-group">
+            <label for="testDescInput">Functionality</label>
+            <input
+              type="text"
+              class="form-control"
+              id="testFuncInput"
+              placeholder="'Theme', 'Create', etc."
+              style="text-overflow: ellipsis"
+              required
+            />
+          </div>
+          <button type="submit" class="btn btn-primary">Generate Test ID</button>
+          <button type="button" id="copyButton" onclick="copyID()">Copy ID</button>
+          <br>
+        </form>
+        <span style="font-size: 30pt">ID: </span>
+        <span id="generatedID">
+        <!-- generated ID output inserted here by JS-->
+        </span>
+      </div>
+
+    </div>
+
+    <!-- jquery -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <!-- bootstrap -->
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <!-- chancejs -->
+    <script src="http://chancejs.com/chance.min.js"></script>
+
+    <script src="main.js"></script>
+  </body>
+</html>
